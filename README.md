@@ -2,6 +2,14 @@ O **ZEST MENU** é um sistema moderno de cardápio digital voltado para restaura
 
 ### Principais Recursos & Funcionalidades
 
+- **Personalização Visual & Simulador**: Alteração em tempo real do banner de capa e logotipo da loja com simulador de celular integrado.
+  
+  ![Personalização Visual e Simulador](docs/screenshots/personalizacao_cardapio.png)
+
+- **Painel de Configurações da Loja**: Controle dos dias de funcionamento do restaurante, horários de abertura e períodos de operação.
+  
+  ![Configurações da Loja](docs/screenshots/configuracoes.png)
+
 - **Gestão de Cardápio**: Criação e ordenação de menus e categorias personalizadas de forma interativa.
   
   ![Lista de Itens e Categorias](docs/screenshots/cardapio_lista.png)
@@ -10,17 +18,9 @@ O **ZEST MENU** é um sistema moderno de cardápio digital voltado para restaura
   
   ![Cadastro Avançado de Prato](docs/screenshots/cadastro_avancado.png)
 
-- **Personalização Visual & Simulador**: Alteração em tempo real do banner de capa e logotipo da loja com simulador de celular integrado.
-  
-  ![Personalização Visual e Simulador](docs/screenshots/personalizacao_cardapio.png)
-
 - **Autenticação & Segurança**: Área de login e cadastro de usuários completa, integrada com controle de acessos (tokens JWT/CSRF/Nonce).
   
   ![Autenticação e Segurança](docs/screenshots/autenticacao.png)
-
-- **Painel de Configurações da Loja**: Controle dos dias de funcionamento do restaurante, horários de abertura e períodos de operação.
-  
-  ![Configurações da Loja](docs/screenshots/configuracoes.png)
 
 - **Interface Moderna & Responsiva**: Design premium com suporte a tema escuro (Dark Mode), tema claro (Light Mode) e sincronização automática com o tema do sistema operacional.
   

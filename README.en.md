@@ -2,6 +2,14 @@
 
 ### Key Features
 
+- **Visual Personalization & Simulator**: Real-time updates of the store's cover banner and logo with an integrated mobile phone mockup simulator.
+  
+  ![Visual Personalization and Simulator](docs/screenshots/personalizacao_cardapio.png)
+
+- **Store Settings Panel**: Control over restaurant opening days, opening hours, and operating shifts.
+  
+  ![Store Settings](docs/screenshots/configuracoes.png)
+
 - **Menu Management**: Creation and sorting of custom menus and categories in an interactive way.
   
   ![Item List and Categories](docs/screenshots/cardapio_lista.png)
@@ -10,17 +18,9 @@
   
   ![Advanced Dish Registration](docs/screenshots/cadastro_avancado.png)
 
-- **Visual Personalization & Simulator**: Real-time updates of the store's cover banner and logo with an integrated mobile phone mockup simulator.
-  
-  ![Visual Personalization and Simulator](docs/screenshots/personalizacao_cardapio.png)
-
 - **Authentication & Security**: Complete login and user registration area, integrated with access control (JWT/CSRF/Nonce tokens).
   
   ![Authentication and Security](docs/screenshots/autenticacao.png)
-
-- **Store Settings Panel**: Control over restaurant opening days, opening hours, and operating shifts.
-  
-  ![Store Settings](docs/screenshots/configuracoes.png)
 
 - **Modern & Responsive Interface**: Premium design supporting Dark Mode, Light Mode, and automatic synchronization with the operating system's theme.
   

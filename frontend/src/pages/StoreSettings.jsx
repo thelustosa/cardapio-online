@@ -15,6 +15,45 @@ import {
 } from 'lucide-react';
 import { motion } from 'framer-motion';
 import styles from './StoreSettings.module.css';
+const formatCNPJ = (value) => {
+  if (!value) return '';
+  const digits = value.replace(/\D/g, '').slice(0, 14);
+  let formatted = '';
+  if (digits.length > 0) {
+    formatted = digits.slice(0, 2);
+    if (digits.length > 2) {
+      formatted += '.' + digits.slice(2, 5);
+      if (digits.length > 5) {
+        formatted += '.' + digits.slice(5, 8);
+        if (digits.length > 8) {
+          formatted += '/' + digits.slice(8, 12);
+          if (digits.length > 12) {
+            formatted += '-' + digits.slice(12, 14);
+          }
+        }
+      }
+    }
+  }
+  return formatted;
+};
+
+const formatPhone = (value) => {
+  if (!value) return '';
+  const digits = value.replace(/\D/g, '').slice(0, 11);
+  let formatted = '';
+  if (digits.length > 0) {
+    if (digits.length <= 2) {
+      formatted = `(${digits}`;
+    } else if (digits.length <= 6) {
+      formatted = `(${digits.slice(0, 2)}) ${digits.slice(2)}`;
+    } else if (digits.length <= 10) {
+      formatted = `(${digits.slice(0, 2)}) ${digits.slice(2, 6)}-${digits.slice(6)}`;
+    } else {
+      formatted = `(${digits.slice(0, 2)}) ${digits.slice(2, 7)}-${digits.slice(7)}`;
+    }
+  }
+  return formatted;
+};
 
 const StoreSettings = ({ storeData, onUpdate, setIsDirty }) => {
   const currentDayIndex = new Date().getDay(); // 0 (Dom) to 6 (Sáb)
@@ -268,7 +307,16 @@ const StoreSettings = ({ storeData, onUpdate, setIsDirty }) => {
               </div>
               <div className={styles.gridCell}>
                 <label>CNPJ</label>
-                <input id="store-cnpj" type="text" defaultValue={storeData?.cnpj || ''} onChange={() => setIsDirty(true)} placeholder="00.000.000/0000-00" />
+                <input 
+                  id="store-cnpj" 
+                  type="text" 
+                  defaultValue={formatCNPJ(storeData?.cnpj || '')} 
+                  onChange={(e) => {
+                    e.target.value = formatCNPJ(e.target.value);
+                    setIsDirty(true);
+                  }} 
+                  placeholder="00.000.000/0000-00" 
+                />
               </div>
             </div>
 
@@ -282,7 +330,16 @@ const StoreSettings = ({ storeData, onUpdate, setIsDirty }) => {
             <div className={`${styles.gridRow} ${styles.row2}`}>
               <div className={styles.gridCell}>
                 <label>TELEFONE</label>
-                <input id="store-phone" type="text" defaultValue={storeData?.telefone || '(718) 555-0142'} onChange={() => setIsDirty(true)} placeholder="Telefone de contato" />
+                <input 
+                  id="store-phone" 
+                  type="text" 
+                  defaultValue={formatPhone(storeData?.telefone || '')} 
+                  onChange={(e) => {
+                    e.target.value = formatPhone(e.target.value);
+                    setIsDirty(true);
+                  }} 
+                  placeholder="Telefone de contato" 
+                />
               </div>
               <div className={styles.gridCell}>
                 <label>EMAIL</label>
