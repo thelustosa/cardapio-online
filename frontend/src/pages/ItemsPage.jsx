@@ -19,12 +19,12 @@ const isSafeMediaUrl = (url) => {
 
 const parseItemImage = (image) => {
   if (!image) return [];
-  if (Array.isArray(image)) return image;
+  if (Array.isArray(image)) return image.flat(Infinity);
   if (typeof image === 'string') {
     if (image.startsWith('[') || image.startsWith('{')) {
       try {
         const parsed = JSON.parse(image);
-        return Array.isArray(parsed) ? parsed : [parsed];
+        return Array.isArray(parsed) ? parsed.flat(Infinity) : [parsed];
       } catch (e) {
         return [image];
       }
