@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&family=Space+Grotesk:wght@300..700&display=swap"
+    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&family=Lobster&display=swap"
+    rel="stylesheet">
+  <title>zestmenu cardápio digital</title>
+
+  <script>
+    if (typeof navigator !== 'undefined' && navigator.webdriver) {
+      document.documentElement.innerHTML = '<h1 style="color:red; text-align:center; margin-top:20%;">Acesso Bloqueado.</h1>';
+      throw new Error("Suspensão de Segurança.");
+    }
+    try {
+      Object.freeze(Object.prototype);
+      Object.freeze(Array.prototype);
+      Object.freeze(navigator);
+    } catch (e) { }
+    (function () {
+      'use strict';
+      const _origFetch = window.fetch;
+      const _origXHR = window.XMLHttpRequest;
+      const _origSetTimeout = window.setTimeout;
+      const _origLocalStorage = window.localStorage;
+      const integrityCheck = function () {
+        let tampered = false;
+        if (window.fetch !== _origFetch) {
+          tampered = true;
+        }
+        if (window.XMLHttpRequest !== _origXHR) {
+          tampered = true;
+        }
+        if (window.localStorage !== _origLocalStorage) {
+          tampered = true;
+        }
+
+        if (tampered) {
+          document.getElementById('root').innerHTML = '';
+          _origSetTimeout(function () {
+            window.location.href = 'about:blank';
+          }, 100);
+          return;
+        }
+        _origSetTimeout(integrityCheck, 5000);
+      };
+      _origSetTimeout(integrityCheck, 3000);
+
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'F12') { e.preventDefault(); return false; }
+        if (e.ctrlKey && e.shiftKey && e.key === 'I') { e.preventDefault(); return false; }
+        if (e.ctrlKey && e.shiftKey && e.key === 'J') { e.preventDefault(); return false; }
+        if (e.ctrlKey && e.key === 'u') { e.preventDefault(); return false; }
+      });
+      document.addEventListener('contextmenu', function (e) {
+        e.preventDefault();
+        return false;
+      });
+    })();
+  </script>
+</head>
+
+<body>
+  <div id="root"></div>
+  <script type="module" src="/src/main.jsx"></script>
+</body>
+
+</html>

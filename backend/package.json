@@ -1,0 +1,42 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node index.js",
+    "start:secure": "node --experimental-permission --allow-fs-read=./ --allow-fs-write=./uploads/,./security-audit.log,./.env index.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "security:audit": "npm audit --audit-level=high",
+    "clean": "rimraf dist_secure",
+    "build:client": "cd ../client; npm install; npm run build",
+    "build:server": "npm run clean; javascript-obfuscator ./ --output ./dist_secure --config ./obfuscate.config.cjs --exclude \"node_modules/**\" --exclude \"dist_secure/**\" --exclude \".env\" --exclude \"uploads/**\"",
+    "build:prod": "npm run build:client; npm run build:server; node -e \"const fs=require('fs');const p=require('./package.json');delete p.devDependencies;fs.writeFileSync('./dist_secure/package.json',JSON.stringify(p,null,2));\"; echo \"\\n✅ DEPLOY CAIXA-PRETA PRONTO! Suba o conteúdo da pasta ./server/dist_secure para a Hostinger.\""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^6.0.0",
+    "cookie-parser": "^1.4.7",
+    "cors": "^2.8.6",
+    "csurf": "^1.11.0",
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1",
+    "express-rate-limit": "^8.3.2",
+    "express-validator": "^7.3.2",
+    "file-type": "^22.0.1",
+    "helmet": "^8.1.0",
+    "hpp": "^0.2.3",
+    "jsonwebtoken": "^9.0.3",
+    "multer": "^2.1.1",
+    "mysql2": "^3.22.0",
+    "winston": "^3.19.0",
+    "xss": "^1.0.15"
+  },
+  "devDependencies": {
+    "javascript-obfuscator": "^5.4.1",
+    "rimraf": "^6.1.3"
+  }
+}

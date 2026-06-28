@@ -1,0 +1,220 @@
+.digitalMenuContainer {
+  padding: 0;
+  width: 100%;
+  font-family: 'Geist', sans-serif;
+}
+
+.pageHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: -15px -15px 0px -15px; /* Compensa o padding do main-content pra grudar no topo */
+  padding: 15px 20px;
+  background-color: white;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.headerInfo h1 {
+  font-size: 24px;
+  font-weight: 700;
+  margin: 0 0 4px 0;
+  color: #111827;
+}
+
+.headerInfo p {
+  color: #6b7280;
+  font-size: 14px;
+  margin: 0;
+}
+
+.primaryBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  height: 32px;
+  padding: 0 16px;
+  font-size: 12px;
+  font-weight: 500;
+  white-space: nowrap;
+  color: white;
+  background-color: #18181b; 
+  border: none;
+  border-radius: 6px;
+  border-bottom: 2px solid #09090b; 
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.primaryBtn:hover {
+  background-color: #000000;
+}
+
+.saveBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  height: 32px;
+  padding: 0 16px;
+  min-width: 160px;
+  font-size: 12px;
+  font-weight: 500;
+  white-space: nowrap;
+  color: #374151;
+  background-color: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 6px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.saveBtn:hover {
+  background-color: #f9fafb;
+  border-color: #d1d5db;
+}
+
+button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.mainGrid {
+  display: flex;
+  gap: 20px;
+  padding: 20px 0;
+  min-height: calc(100vh - 120px);
+}
+
+.configArea {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.previewArea {
+  width: 320px; /* Aproximadamente 25% em resoluções comuns de dashboard */
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: sticky;
+  top: 20px;
+  height: fit-content;
+}
+
+.iphoneFrame {
+  width: 280px;
+  height: 570px;
+  background: #111;
+  border-radius: 48px;
+  padding: 8px;
+  box-shadow: 
+    0 50px 100px -20px rgba(0, 0, 0, 0.3),
+    inset 0 0 1px 2px rgba(255, 255, 255, 0.1);
+  position: relative;
+  border: 4px solid #374151; /* Titanium Gray look */
+  outline: 1px solid #1f2937;
+}
+
+/* Side Buttons */
+.iphoneFrame::before {
+  content: '';
+  position: absolute;
+  left: -6px;
+  top: 90px;
+  width: 3px;
+  height: 25px; /* Action Button */
+  background: #374151;
+  border-radius: 2px 0 0 2px;
+  box-shadow: 0 50px 0 #374151, 0 85px 0 #374151; /* Volume Up/Down */
+}
+
+.iphoneFrame::after {
+  content: '';
+  position: absolute;
+  right: -6px;
+  top: 140px;
+  width: 3px;
+  height: 60px; /* Power Button */
+  background: #374151;
+  border-radius: 0 2px 2px 0;
+}
+
+.iphoneScreen {
+  width: 100%;
+  height: 100%;
+  background: white;
+  border-radius: 40px;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  z-index: 1;
+}
+
+.dynamicIsland {
+  position: absolute;
+  top: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 75px;
+  height: 22px;
+  background: #000;
+  border-radius: 100px;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding-right: 8px;
+}
+
+/* Speaker/Camera subtle dots */
+.dynamicIsland::after {
+  content: '';
+  width: 6px;
+  height: 6px;
+  background: #111;
+  border-radius: 50%;
+  box-shadow: inset 0 0 1px rgba(255,255,255,0.2);
+}
+
+.iphoneContent {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  background: #fff;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE/Edge */
+}
+
+.iphoneContent::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}
+
+.previewLabel {
+  margin-top: 15px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #6b7280;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+:global(html.dark-theme-root) .iphoneFrame {
+  filter: invert(1) hue-rotate(180deg) contrast(1.15) brightness(0.85);
+}
+
+:global(html.dark-theme-root) .iphoneScreen {
+  filter: invert(1) hue-rotate(180deg) contrast(1.15) brightness(0.85);
+}
+
+:global(html.dark-theme-root) .bannerUploadBox,
+:global(html.dark-theme-root) .logoUploadBox,
+:global(html.dark-theme-root) .mockupBanner {
+  filter: invert(1) hue-rotate(180deg) contrast(1.15) brightness(0.85);
+}

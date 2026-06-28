@@ -1,0 +1,74 @@
+<!DOCTYPE html><html lang="en"><head>
+  <meta charset="UTF-8">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" integrity="sha384-lJP4nSP4DaMtSwjwJTqLLaT/diwqnslV7sJCaQJDKaeWAMVg6961KsGfMuD1P6jp" crossorigin="anonymous">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin="anonymous">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&amp;family=Space+Grotesk:wght@300..700&amp;display=swap" rel="stylesheet" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&amp;family=Lobster&amp;display=swap" rel="stylesheet" crossorigin="anonymous">
+  <title>zestmenu cardápio digital</title>
+
+  <script>
+    if (typeof navigator !== 'undefined' && navigator.webdriver) {
+      document.documentElement.innerHTML = '<h1 style="color:red; text-align:center; margin-top:20%;">Acesso Bloqueado.</h1>';
+      throw new Error("Suspensão de Segurança.");
+    }
+    try {
+      Object.freeze(Object.prototype);
+      Object.freeze(Array.prototype);
+      Object.freeze(navigator);
+    } catch (e) { }
+    (function () {
+      'use strict';
+      const _origFetch = window.fetch;
+      const _origXHR = window.XMLHttpRequest;
+      const _origSetTimeout = window.setTimeout;
+      const _origLocalStorage = window.localStorage;
+      const integrityCheck = function () {
+        let tampered = false;
+        if (window.fetch !== _origFetch) {
+          tampered = true;
+        }
+        if (window.XMLHttpRequest !== _origXHR) {
+          tampered = true;
+        }
+        if (window.localStorage !== _origLocalStorage) {
+          tampered = true;
+        }
+
+        if (tampered) {
+          document.getElementById('root').innerHTML = '';
+          _origSetTimeout(function () {
+            window.location.href = 'about:blank';
+          }, 100);
+          return;
+        }
+        _origSetTimeout(integrityCheck, 5000);
+      };
+      _origSetTimeout(integrityCheck, 3000);
+
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'F12') { e.preventDefault(); return false; }
+        if (e.ctrlKey && e.shiftKey && e.key === 'I') { e.preventDefault(); return false; }
+        if (e.ctrlKey && e.shiftKey && e.key === 'J') { e.preventDefault(); return false; }
+        if (e.ctrlKey && e.key === 'u') { e.preventDefault(); return false; }
+      });
+      document.addEventListener('contextmenu', function (e) {
+        e.preventDefault();
+        return false;
+      });
+    })();
+  </script>
+  <script type="module" crossorigin="" src="/assets/z-CGL7LThg.js" integrity="sha384-YtiCq57B3TveCpSk1h1OC519ICAnZnVmVrXWT+mQQmZnZ3VGXUFvWZHsgH9Scbqt"></script>
+  <link rel="modulepreload" crossorigin="" href="/assets/z-BGynKC7q.js" integrity="sha384-Y8jM7e8vsomLEq2rleQ0V3rTU/qQ9B9LXnFMmjCVUVRG9mjlgzsvKsZtGa+uIftg">
+  <link rel="modulepreload" crossorigin="" href="/assets/z-D1po65uu.js" integrity="sha384-xFqjNcqihbEM0VoxwfoDtTlgfLlRk69QlCiN+BWC/eIMSRxGFi9cC1Dx9lmnDVk/">
+  <link rel="modulepreload" crossorigin="" href="/assets/z-DtgQdiQO.js" integrity="sha384-pZSvsAJSdCpnOJ6dFv4yZgW+ox5dJf0/sWuOJ+M5HJBYGzOgKaO3Xv3+iR3LcOQJ">
+  <link rel="modulepreload" crossorigin="" href="/assets/z-DgzLSqxO.js" integrity="sha384-IzlHXyFXoZzN3wL1u1AldozE70WQPOiuFsRBgWCVyrzzw1H8zEaqClPiyAkNORdb">
+  <link rel="stylesheet" crossorigin="" href="/assets/z-COJGjHBO.css" integrity="sha384-HRElX2CoL1eqUmi7VwIdetLffDEnmuoJ93hfx3qZFZvJzw67dhMMj8lliwZNKrp5">
+</head>
+
+<body>
+  <div id="root"></div>
+
+
+</body></html>

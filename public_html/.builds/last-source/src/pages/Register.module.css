@@ -1,0 +1,180 @@
+* {
+  box-sizing: border-box;
+}
+
+.register-container.dark-theme {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  min-height: 100vh !important;
+  width: 100% !important;
+  background-color: #09090b !important;
+  background-image: 
+    radial-gradient(at 0% 0%, rgba(119, 187, 43, 0.08) 0px, transparent 50%),
+    radial-gradient(at 100% 100%, rgba(119, 187, 43, 0.05) 0px, transparent 50%) !important;
+  font-family: 'Geist', -apple-system, sans-serif !important;
+  color: #fafafa !important;
+  padding: 40px 20px !important;
+  overflow-x: hidden !important;
+  position: relative !important;
+  margin: 0 !important;
+}
+
+.register-form-box {
+  width: 100% !important;
+  max-width: 400px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  z-index: 1 !important;
+}
+
+.register-header {
+  margin-bottom: 32px !important;
+  text-align: left !important;
+}
+
+/* LOGO STYLE */
+.register-container .branding-container {
+  display: flex !important;
+  align-items: center !important;
+  gap: 12px !important;
+  margin-bottom: 48px !important;
+}
+
+.register-container .brand-icon {
+  width: 42px !important;
+  height: auto !important;
+  filter: drop-shadow(0 0 15px rgba(119, 187, 43, 0.3)) !important;
+}
+
+.register-container .brand-name {
+  font-family: 'Space Grotesk', sans-serif !important;
+  font-size: 28px !important;
+  color: #ffffff !important; /* FORÇADO BRANCO */
+  margin: 0 !important;
+  line-height: 0.8 !important;
+  letter-spacing: -1.2px !important;
+  font-weight: 400 !important;
+}
+
+.register-container h1, 
+.register-container h2, 
+.register-container span, 
+.register-container p {
+  color: #ffffff !important; /* TODOS OS HEADERS BRANCOS */
+}
+
+.register-container .brand-name .open-text {
+  font-weight: 700 !important;
+  color: #ffffff !important;
+}
+
+.register-container .brand-subtext {
+  font-family: 'Rajdhani', sans-serif !important;
+  font-size: 11px !important;
+  font-weight: 700 !important;
+  color: #77bb2b !important; /* ZEST GREEN MANTIDO */
+  letter-spacing: 2.5px !important;
+  margin-top: -4px !important;
+  text-transform: uppercase !important;
+}
+
+.register-header h1 {
+  font-size: 32px !important;
+  font-weight: 700 !important;
+  margin: 0 0 10px 0 !important;
+  letter-spacing: -0.8px !important;
+  color: #ffffff !important;
+}
+
+.register-header .subtitle {
+  font-size: 14px !important;
+  color: #a1a1aa !important;
+  margin: 0 !important;
+}
+
+.register-header .subtitle a {
+  color: #77bb2b !important;
+  text-decoration: none !important;
+  font-weight: 600 !important;
+  margin-left: 4px !important;
+}
+
+/* FORM STYLE */
+.register-form {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 16px !important;
+}
+
+.form-group {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 8px !important;
+}
+
+.form-group label {
+  font-size: 12px !important;
+  font-weight: 600 !important;
+  color: #a1a1aa !important;
+  text-transform: uppercase !important;
+  letter-spacing: 1px !important;
+}
+
+.register-form input {
+  width: 100% !important;
+  background: #18181b !important;
+  border: 1px solid #27272a !important;
+  border-radius: 8px !important;
+  padding: 14px 16px !important;
+  font-size: 15px !important;
+  color: #ffffff !important;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+.register-form input:focus {
+  outline: none !important;
+  border-color: #77bb2b !important;
+  background: #09090b !important;
+  box-shadow: 0 0 0 2px rgba(119, 187, 43, 0.15) !important;
+}
+
+.submit-btn-dark {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 8px !important;
+  padding: 14px 16px !important;
+  font-size: 14px !important;
+  font-weight: 600 !important;
+  color: #374151 !important;
+  background-color: #ffffff !important;
+  border: 1px solid #e5e7eb !important;
+  border-radius: 8px !important;
+  border-bottom: 2px solid #d1d5db !important;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05) !important;
+  cursor: pointer !important;
+  margin-top: 12px !important;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+.submit-btn-dark:hover {
+  background-color: #f9fafb !important;
+  border-color: #d1d5db !important;
+  transform: translateY(-1px) !important;
+}
+
+.submit-btn-dark:active {
+  transform: translateY(1px) !important;
+  border-bottom-width: 0px !important;
+}
+
+.register-footer {
+  margin-top: 32px !important;
+  text-align: center !important;
+}
+
+.register-footer, .register-footer a {
+  color: #71717a !important;
+  font-size: 13px !important;
+}
