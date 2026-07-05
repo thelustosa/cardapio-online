@@ -4,8 +4,8 @@ import { Plus, Search, Filter, Settings, Pencil, ChevronRight, ChevronDown, Chev
 import styles from './ItemsPage.module.css';
 
 // ================= SECURITY: Dynamic API Base URL (V4) ================= //
-const API_BASE_URL = window.location.hostname === 'localhost' 
-  ? 'http://localhost:3002' 
+const API_BASE_URL = (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1')
+  ? '' 
   : 'https://api.zestmenu.com.br';
 
 // ================= SECURITY: URL Sanitization Helper (V6) ================= //

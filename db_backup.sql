@@ -1,6 +1,6 @@
 -- MariaDB dump 10.19  Distrib 10.4.28-MariaDB, for osx10.10 (x86_64)
 --
--- Host: srv1896.hstgr.io    Database: u854262463_zest_novo
+-- Host: 127.0.0.1    Database: zestmenu_db
 -- ------------------------------------------------------
 -- Server version	11.8.8-MariaDB-log
 

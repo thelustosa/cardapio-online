@@ -143,7 +143,7 @@ const isAllowedOrigin = (origin) => {
   const normalized = origin.replace(/\/+$/, '').toLowerCase(); // Remove trailing slashes
   
   // Localhost (desenvolvimento)
-  if (normalized.startsWith('http://localhost:')) return true;
+  if (normalized.startsWith('http://localhost:') || normalized.startsWith('http://127.0.0.1:')) return true;
   
   // Domínio de produção (qualquer subdomínio de zestmenu.com.br)
   if (normalized.endsWith('.zestmenu.com.br') || normalized === 'https://zestmenu.com.br') return true;
@@ -173,7 +173,7 @@ app.use((req, res, next) => {
 
 // 2. HTTP Headers Security (HSTS, CSP & Report-To Tracking)
 app.use(helmet({
-  contentSecurityPolicy: {
+  contentSecurityPolicy: process.env.NODE_ENV === 'production' ? {
     directives: {
       defaultSrc: ["'self'"],
       scriptSrc: ["'self'", "'unsafe-inline'", "'unsafe-eval'", "https://api.zestmenu.com.br", "https://zestmenu.com.br"],
@@ -183,12 +183,12 @@ app.use(helmet({
       connectSrc: ["'self'", "https://api.zestmenu.com.br", "https://zestmenu.com.br"],
       reportUri: '/api/csp-violation'
     },
-  },
-  hsts: {
+  } : false,
+  hsts: process.env.NODE_ENV === 'production' ? {
     maxAge: 31536000, 
     includeSubDomains: true,
     preload: true
-  },
+  } : false,
   crossOriginResourcePolicy: { policy: "cross-origin" }
 }));
 

@@ -13,7 +13,19 @@ export default defineConfig({
     })
   ],
   server: {
-    port: 5174
+    port: 5174,
+    proxy: {
+      '/api': {
+        target: 'http://localhost:3002',
+        changeOrigin: true,
+        secure: false
+      },
+      '/uploads': {
+        target: 'http://localhost:3002',
+        changeOrigin: true,
+        secure: false
+      }
+    }
   },
 
   // 1. DESATIVAÇÃO PERMANENTE DE SOURCE MAPS

@@ -6,8 +6,8 @@ import ItemsPage from './pages/ItemsPage';
 import DigitalMenu from './pages/DigitalMenu';
 import styles from './App.module.css';
 
-const API_BASE_URL = window.location.hostname === 'localhost' 
-  ? 'http://localhost:3002' 
+const API_BASE_URL = (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1')
+  ? '' 
   : 'https://api.zestmenu.com.br';
 
 const Dashboard = () => (

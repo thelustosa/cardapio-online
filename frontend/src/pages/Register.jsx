@@ -64,23 +64,30 @@ const Register = ({ onRegister, onLogin }) => {
     return null;
   };
 
+  const [errorMsg, setErrorMsg] = React.useState('');
+
   const handleSubmit = (e) => {
     e.preventDefault();
+    setErrorMsg('');
     if (isLogin) {
       if (!formData.email || !formData.senha) {
-        alert('Por favor, preencha email e senha.');
+        setErrorMsg('Por favor, preencha email e senha.');
         return;
       }
       onLogin({ email: formData.email, senha: formData.senha });
     } else {
+      if (!formData.nome) {
+        setErrorMsg('Por favor, preencha o Nome da Loja.');
+        return;
+      }
       if (!formData.senha) {
-        alert('Por favor, defina uma senha.');
+        setErrorMsg('Por favor, defina uma senha.');
         return;
       }
       // V7: Validação no frontend antes de enviar ao backend
       const passwordError = validatePassword(formData.senha);
       if (passwordError) {
-        alert(passwordError);
+        setErrorMsg(passwordError);
         return;
       }
       onRegister(formData);
@@ -110,6 +117,12 @@ const Register = ({ onRegister, onLogin }) => {
             </a>
           </p>
         </header>
+
+        {errorMsg && (
+          <div style={{ backgroundColor: '#fee2e2', color: '#b91c1c', padding: '10px', borderRadius: '8px', marginBottom: '16px', textAlign: 'center', fontSize: '14px', fontWeight: '500' }}>
+            {errorMsg}
+          </div>
+        )}
 
         <form className={styles.registerForm} onSubmit={handleSubmit}>
           {!isLogin && (
