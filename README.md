@@ -2,7 +2,7 @@
   <img src="docs/screenshots/autenticacao.png" width="600" alt="Zest Menu — Cardápio Digital"/>
 </p>
 
-<h1 align="center">🍽️ Zest Menu — Cardápio Digital</h1>
+<h1 align="center">Zest Menu — Cardápio Digital</h1>
 
 <p align="center">
   Sistema completo de cardápio digital para restaurantes com painel administrativo, gestão de itens, categorias e simulador de celular em tempo real.
@@ -18,19 +18,19 @@
 
 ---
 
-## ✨ Funcionalidades
+## Funcionalidades
 
-- **📱 Simulador de Cardápio**: Preview em tempo real do cardápio em formato mobile
-- **🎨 Personalização Visual**: Banner de capa, logotipo e temas (Dark/Light Mode)
-- **📋 Gestão de Cardápio**: Categorias, subcategorias e itens com drag-and-drop
-- **🍔 Cadastro Avançado de Pratos**: Fotos, preço, calorias, alérgenos, tempo de preparo
-- **🔐 Autenticação Segura**: JWT + CSRF + Nonce + Rate Limiting + Helmet
-- **⚙️ Painel de Configurações**: Horários de funcionamento, endereço, dados da loja
-- **📤 Upload de Imagens**: Upload seguro com validação de tipo e tamanho
+- **Simulador de Cardápio**: Preview em tempo real do cardápio em formato mobile
+- **Personalização Visual**: Banner de capa, logotipo e temas (Dark/Light Mode)
+- **Gestão de Cardápio**: Categorias, subcategorias e itens com drag-and-drop
+- **Cadastro Avançado de Pratos**: Fotos, preço, calorias, alérgenos, tempo de preparo
+- **Autenticação Segura**: JWT + CSRF + Nonce + Rate Limiting + Helmet
+- **Painel de Configurações**: Horários de funcionamento, endereço, dados da loja
+- **Upload de Imagens**: Upload seguro com validação de tipo e tamanho
 
 ---
 
-## 📸 Screenshots
+## Screenshots
 
 |  Personalização  |  Cardápio  |  Cadastro de Prato  |
 |:---:|:---:|:---:|
@@ -38,7 +38,7 @@
 
 ---
 
-## 🗂️ Estrutura do Projeto
+## Estrutura do Projeto
 
 ```
 ZESTAQUI/
@@ -60,7 +60,7 @@ ZESTAQUI/
 
 ---
 
-## 🚀 Instalação e Execução
+## Instalação e Execução
 
 ### Pré-requisitos
 
@@ -73,8 +73,8 @@ ZESTAQUI/
 ### Passo 1 — Clonar o Repositório
 
 ```bash
-git clone https://github.com/SEU_USUARIO/zestmenu.git
-cd zestmenu
+git clone https://github.com/thelustosa/cardapio-online.git
+cd cardapio-online
 ```
 
 ### Passo 2 — Configurar o Banco de Dados
@@ -114,7 +114,7 @@ NODE_ENV=development
 PORT=3002
 ```
 
-> **💡 Dica**: Para gerar chaves seguras, use:
+> **Dica**: Para gerar chaves seguras, use:
 > ```bash
 > node -e "console.log(require('crypto').randomBytes(64).toString('hex'))"
 > ```
@@ -139,8 +139,8 @@ npm start
 ```
 Você deve ver:
 ```
-✅ Banco de dados "zestmenu_db" garantido.
-✅ Pool conectado ao banco "zestmenu_db" com sucesso!
+Banco de dados "zestmenu_db" garantido.
+Pool conectado ao banco "zestmenu_db" com sucesso!
 Secured Server running on port 3002
 ```
 
@@ -157,11 +157,11 @@ VITE v8.x.x ready in XXX ms
 
 ### Passo 6 — Acessar
 
-Abra o navegador em **http://localhost:5174** e crie sua conta! 🎉
+Abra o navegador em **http://localhost:5174** e crie sua conta!
 
 ---
 
-## 🔧 Configuração de Produção
+## Configuração de Produção
 
 Para deploy em produção (ex: Hostinger, VPS, etc.):
 
@@ -177,7 +177,7 @@ npm run build
 
 ---
 
-## 🛡️ Segurança
+## Segurança
 
 O backend implementa as seguintes camadas de segurança:
 
@@ -194,12 +194,6 @@ O backend implementa as seguintes camadas de segurança:
 
 ---
 
-## 📄 Licença
+## Licença
 
 Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
-
----
-
-<p align="center">
-  Feito com ❤️ por <strong>Lucas Coelho</strong>
-</p>

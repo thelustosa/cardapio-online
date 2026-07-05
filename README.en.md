@@ -2,7 +2,7 @@
   <img src="docs/screenshots/autenticacao.png" width="600" alt="Zest Menu — Digital Menu"/>
 </p>
 
-<h1 align="center">🍽️ Zest Menu — Digital Menu</h1>
+<h1 align="center">Zest Menu — Digital Menu</h1>
 
 <p align="center">
   A complete digital menu system for restaurants featuring an administrative panel, item management, categories, and real-time mobile simulator.
@@ -18,19 +18,19 @@
 
 ---
 
-## ✨ Features
+## Features
 
-- **📱 Menu Mockup Simulator**: Real-time mobile preview of the active menu
-- **🎨 Visual Customization**: Cover banner, logo upload, and theme toggle (Dark/Light Mode)
-- **📋 Menu Management**: Drag-and-drop ordering for categories, subcategories, and items
-- **🍔 Advanced Dish Setup**: Pictures, price, calories, allergens, preparation time
-- **🔐 Robust Security**: JWT + CSRF + Nonce + Rate Limiting + Helmet
-- **⚙️ Store Settings**: Operating hours, shifts, address, contact details
-- **📤 Secure File Uploads**: Multer validation with magic bytes detection
+- **Menu Mockup Simulator**: Real-time mobile preview of the active menu
+- **Visual Customization**: Cover banner, logo upload, and theme toggle (Dark/Light Mode)
+- **Menu Management**: Drag-and-drop ordering for categories, subcategories, and items
+- **Advanced Dish Setup**: Pictures, price, calories, allergens, preparation time
+- **Robust Security**: JWT + CSRF + Nonce + Rate Limiting + Helmet
+- **Store Settings**: Operating hours, shifts, address, contact details
+- **Secure File Uploads**: Multer validation with magic bytes detection
 
 ---
 
-## 📸 Screenshots
+## Screenshots
 
 |  Customization  |  Menu  |  Add Dish  |
 |:---:|:---:|:---:|
@@ -38,7 +38,7 @@
 
 ---
 
-## 🗂️ Project Structure
+## Project Structure
 
 ```
 ZESTAQUI/
@@ -60,7 +60,7 @@ ZESTAQUI/
 
 ---
 
-## 🚀 Installation & Setup
+## Installation & Setup
 
 ### Prerequisites
 
@@ -139,8 +139,8 @@ npm start
 ```
 You should see:
 ```
-✅ Database "zestmenu_db" guaranteed.
-✅ Pool connected to DB "zestmenu_db" successfully!
+Database "zestmenu_db" guaranteed.
+Pool connected to DB "zestmenu_db" successfully!
 Secured Server running on port 3002
 ```
 
@@ -157,11 +157,11 @@ VITE v8.x.x ready in XXX ms
 
 ### Step 6 — Open and Enjoy
 
-Open your browser and navigate to **http://localhost:5174** to create your account! 🎉
+Open your browser and navigate to **http://localhost:5174** to create your account!
 
 ---
 
-## 🔧 Production Build
+## Production Build
 
 To deploy this project to a live host (e.g. Hostinger, Nginx, Npm-build):
 
@@ -177,7 +177,7 @@ npm run build
 
 ---
 
-## 🛡️ Security Implementations
+## Security Implementations
 
 The API backend features several enterprise security mechanisms:
 
@@ -194,6 +194,6 @@ The API backend features several enterprise security mechanisms:
 
 ---
 
-## 📄 License
+## License
 
 This project is licensed under the MIT License. See [LICENSE](LICENSE) for details.
