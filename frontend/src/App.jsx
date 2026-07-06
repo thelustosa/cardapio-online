@@ -4,6 +4,7 @@ import StoreSettings from './pages/StoreSettings';
 import Register from './pages/Register';
 import ItemsPage from './pages/ItemsPage';
 import DigitalMenu from './pages/DigitalMenu';
+import PublicMenu from './pages/PublicMenu';
 import styles from './App.module.css';
 
 const API_BASE_URL = (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1')
@@ -36,7 +37,11 @@ const Dashboard = () => (
 );
 
 function App() {
-  const [activePath, setActivePath] = useState('/cadastro');
+  const initialPath = window.location.pathname;
+  // If the path is not the root or known paths, assume it's a slug for the public menu
+  const isPublicSlug = initialPath !== '/' && initialPath !== '/cadastro' && !initialPath.startsWith('/configuracoes') && !initialPath.startsWith('/cardapio');
+  
+  const [activePath, setActivePath] = useState(isPublicSlug ? initialPath : '/cadastro');
   const [activeStoreId, setActiveStoreId] = useState(localStorage.getItem('activeStoreId'));
   const [storeData, setStoreData] = useState(null);
   const [hasUnsavedChanges, setHasUnsavedChanges] = useState(false);
@@ -210,6 +215,11 @@ function App() {
     setStoreData(null);
     setActivePath('/cadastro');
   };
+
+  if (isPublicSlug) {
+    const slug = initialPath.substring(1); // remove the leading slash
+    return <PublicMenu slug={slug} />;
+  }
 
   if (activePath === '/cadastro' && !activeStoreId) {
     return <Register onRegister={handleRegister} onLogin={handleLogin} />;

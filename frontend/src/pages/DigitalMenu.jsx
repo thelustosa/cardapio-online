@@ -1,7 +1,8 @@
 import React from 'react';
 import { ExternalLink, ImageUp, Save, ImageOff } from 'lucide-react';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import styles from './DigitalMenu.module.css';
+import StoryViewer from '../components/StoryViewer';
 
 const API_BASE_URL = (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1')
   ? '' 
@@ -20,6 +21,7 @@ const DigitalMenu = ({ storeData, onUpdate, setIsDirty }) => {
   const [previewItems, setPreviewItems] = React.useState([]);
   const [selectedMenu, setSelectedMenu] = React.useState(null); // null = "Todos"
   const [selectedCategory, setSelectedCategory] = React.useState(null);
+  const [activeStoryIndex, setActiveStoryIndex] = React.useState(null);
 
   const defaultBanner = '/default-cover.png';
 
@@ -46,6 +48,22 @@ const DigitalMenu = ({ storeData, onUpdate, setIsDirty }) => {
       return image;
     }
     return null;
+  };
+
+  const handleViewMenu = () => {
+    if (!storeData?.nome) {
+      alert("Nome do restaurante não encontrado.");
+      return;
+    }
+    const slug = storeData.nome
+      .toLowerCase()
+      .normalize("NFD")
+      .replace(/[\u0300-\u036f]/g, "")
+      .replace(/[^a-z0-9\s-]/g, "")
+      .trim()
+      .replace(/\s+/g, "-");
+      
+    window.open(`/${slug}`, '_blank');
   };
 
   // Fetch menus and items for the preview
@@ -195,7 +213,7 @@ const DigitalMenu = ({ storeData, onUpdate, setIsDirty }) => {
               {saveStatus === 'success' ? 'Salvo!' : (isSaving ? 'Salvando...' : 'Salvar Alterações')}
             </span>
           </button>
-          <button className={styles.primaryBtn}>
+          <button className={styles.primaryBtn} onClick={handleViewMenu}>
             <ExternalLink size={18} />
             Visualizar Cardápio Digital
           </button>
@@ -360,10 +378,14 @@ const DigitalMenu = ({ storeData, onUpdate, setIsDirty }) => {
                     {filteredItems.length === 0 ? (
                       <p style={{ fontSize: '10px', color: '#9ca3af', textAlign: 'center', marginTop: '16px' }}>Nenhum item neste menu</p>
                     ) : (
-                      filteredItems.map(item => {
+                      filteredItems.map((item, index) => {
                         const imgUrl = parseImage(item.image);
                         return (
-                          <div key={item.id} style={{ display: 'flex', gap: '10px', alignItems: 'center' }}>
+                          <div 
+                            key={item.id} 
+                            style={{ display: 'flex', gap: '10px', alignItems: 'center', cursor: 'pointer' }}
+                            onClick={() => setActiveStoryIndex(index)}
+                          >
                             <div style={{
                               width: '54px', height: '54px', borderRadius: '10px',
                               background: '#f3f4f6', border: '1px solid #f3f4f6',
@@ -395,6 +417,17 @@ const DigitalMenu = ({ storeData, onUpdate, setIsDirty }) => {
                   </div>
                 </div>
               </div>
+              
+              <AnimatePresence>
+                {activeStoryIndex !== null && (
+                  <StoryViewer 
+                    items={filteredItems}
+                    initialIndex={activeStoryIndex}
+                    onClose={() => setActiveStoryIndex(null)}
+                    apiBaseUrl={API_BASE_URL}
+                  />
+                )}
+              </AnimatePresence>
             </div>
           </div>
         </div>

@@ -41,21 +41,21 @@ const Sidebar = ({ activePath, onNavigate, storeData, onLogout, activeTheme, cha
   }, []);
 
   const sections = [
-    {
+    /* {
       title: null,
       items: [
         { title: 'Dashboard', icon: <Home size={18} />, path: '/' },
       ]
-    },
+    }, */
     {
       title: 'Sistema',
       items: [
-        { title: 'Pedidos', icon: <Ticket size={18} />, path: '/pedidos' },
-        { title: 'Cozinha', icon: <ChefHat size={18} />, path: '/cozinha' },
+        // { title: 'Pedidos', icon: <Ticket size={18} />, path: '/pedidos' },
+        // { title: 'Cozinha', icon: <ChefHat size={18} />, path: '/cozinha' },
         { title: 'Cardápio', icon: <HandPlatter size={18} />, path: '/cardapio' },
         { title: 'Cardápio Digital', icon: <Smartphone size={18} />, path: '/cardapio-digital' },
-        { title: 'Salão', icon: <Table2 size={18} />, path: '/salao' },
-        { title: 'Análises', icon: <BarChart3 size={18} />, path: '/analises' },
+        // { title: 'Salão', icon: <Table2 size={18} />, path: '/salao' },
+        // { title: 'Análises', icon: <BarChart3 size={18} />, path: '/analises' },
       ]
     }
   ];

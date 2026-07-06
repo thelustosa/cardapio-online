@@ -809,6 +809,33 @@ app.post('/api/login',
   }
 });
 
+// PUBLIC ENDPOINT: Get Store and Items by Slug
+app.get('/api/public/store/:slug', async (req, res) => {
+  const { slug } = req.params;
+  try {
+    const [stores] = await pool.query('SELECT * FROM stores');
+    const store = stores.find(s => {
+      if(!s.nome) return false;
+      const sSlug = s.nome.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/[^a-z0-9\s-]/g, "").trim().replace(/\s+/g, "-");
+      return sSlug === slug;
+    });
+    
+    if (!store) {
+      return res.status(404).json({ error: 'Loja não encontrada' });
+    }
+
+    delete store.senha;
+    
+    const [categories] = await pool.query('SELECT * FROM categories WHERE store_id = ? ORDER BY sort_order ASC', [store.id]);
+    const [items] = await pool.query('SELECT * FROM menu_items WHERE store_id = ?', [store.id]);
+    
+    res.json({ store, categories, items });
+  } catch (error) {
+    logger.error(`[PUBLIC API ERROR] ${error.message}`);
+    res.status(500).json({ error: 'Erro no servidor' });
+  }
+});
+
 app.get('/api/store/:id', authenticateToken, async (req, res) => {
   if (Number(req.params.id) !== req.user.storeId) {
     return res.status(403).json({ error: 'Acesso proibido.' });

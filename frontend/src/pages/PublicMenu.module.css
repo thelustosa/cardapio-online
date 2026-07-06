@@ -1,0 +1,66 @@
+.publicMenuContainer {
+  width: 100vw;
+  min-height: 100vh;
+  background-color: #f9fafb;
+  font-family: 'Geist', sans-serif;
+  display: flex;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+}
+
+.menuContent {
+  width: 100%;
+  max-width: 480px; /* Mobile width constraint for desktop view */
+  background: white;
+  min-height: 100vh;
+  position: relative;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+}
+
+.loadingContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  color: #6b7280;
+  font-family: 'Geist', sans-serif;
+}
+
+.spinner {
+  width: 40px;
+  height: 40px;
+  border: 3px solid #f3f4f6;
+  border-top-color: #111827;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-bottom: 16px;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.errorContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 20px;
+  text-align: center;
+  color: #ef4444;
+  font-family: 'Geist', sans-serif;
+}
+
+.errorContainer h2 {
+  font-size: 20px;
+  margin-bottom: 8px;
+}
+
+.errorContainer p {
+  color: #6b7280;
+}

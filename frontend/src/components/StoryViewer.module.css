@@ -1,0 +1,148 @@
+.storyOverlay {
+  position: absolute;
+  inset: 0;
+  background-color: #000;
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border-radius: 40px; /* Match iphone screen border radius */
+}
+
+.progressContainer {
+  display: flex;
+  gap: 4px;
+  padding: 16px 12px 10px 12px;
+  position: absolute;
+  top: 30px; /* Below dynamic island */
+  left: 0;
+  right: 0;
+  z-index: 110;
+}
+
+.progressBar {
+  flex: 1;
+  height: 3px;
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.progressFill {
+  height: 100%;
+  background-color: white;
+  width: 0%;
+  border-radius: 2px;
+  transition: width 0.1s linear;
+}
+
+.header {
+  position: absolute;
+  top: 50px;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: flex-end;
+  padding: 0 16px;
+  z-index: 110;
+}
+
+.closeButton {
+  background: rgba(0, 0, 0, 0.4);
+  border: none;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  cursor: pointer;
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
+
+.contentArea {
+  position: absolute;
+  inset: 0;
+  z-index: 105;
+  display: flex;
+}
+
+.tapZoneLeft {
+  width: 30%;
+  height: 100%;
+  /* background: rgba(255, 0, 0, 0.1); /* For debugging */
+  cursor: pointer;
+}
+
+.tapZoneRight {
+  width: 70%;
+  height: 100%;
+  /* background: rgba(0, 255, 0, 0.1); /* For debugging */
+  cursor: pointer;
+}
+
+.imageBackground {
+  position: absolute;
+  inset: 0;
+  z-index: 101;
+}
+
+.imageBackground img,
+.imageBackground video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.placeholderBackground {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #1f2937, #111827);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.itemDetails {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 40px 20px 30px 20px;
+  background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.6) 60%, rgba(0,0,0,0) 100%);
+  color: white;
+  z-index: 110;
+}
+
+.itemName {
+  font-size: 20px;
+  font-weight: 700;
+  margin: 0 0 8px 0;
+  line-height: 1.2;
+}
+
+.itemDescription {
+  font-size: 13px;
+  color: #d1d5db;
+  margin: 0 0 16px 0;
+  line-height: 1.4;
+  /* Max 3 lines */
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.itemPrice {
+  font-size: 18px;
+  font-weight: 700;
+  color: #10b981; /* Emerald green */
+  display: inline-block;
+  padding: 6px 12px;
+  background: rgba(16, 185, 129, 0.15);
+  border-radius: 8px;
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
